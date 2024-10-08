@@ -1,5 +1,4 @@
 "use client";
-import Cat from '@/Components/Listing/cat';
 import CourseCard from '@/Components/Listing/CourseCard';
 import React, { useEffect, useState } from 'react';
 import supabase from '@/lib/SupabaseClient';
