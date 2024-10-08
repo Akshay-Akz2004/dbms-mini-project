@@ -7,7 +7,7 @@ const Page2Header = () => {
   const imageRef = useRef(null);
   const textRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const tl = gsap.timeline();
 
     tl.from(imageRef.current, {
