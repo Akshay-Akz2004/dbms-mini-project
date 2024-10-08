@@ -1,13 +1,14 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const Page2Header = () => {
   const headerRef = useRef(null);
   const imageRef = useRef(null);
   const textRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const tl = gsap.timeline();
 
     tl.from(imageRef.current, {
