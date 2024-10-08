@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation'; 
 import supabase from '@/lib/SupabaseClient'; 
 import Header from '@/Components/Header';
@@ -124,4 +124,12 @@ const CourseDetailsPage = () => {
   );
 };
 
-export default CourseDetailsPage;
+const CourseDetailsWrapper = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CourseDetailsPage />
+    </Suspense>
+  );
+};
+
+export default CourseDetailsWrapper;
