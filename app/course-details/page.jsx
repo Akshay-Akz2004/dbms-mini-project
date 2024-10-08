@@ -44,6 +44,8 @@ const CourseDetailsPage = () => {
   };
 
   const handleSendEmail = async () => {
+    if (!courseDetails) return;
+
     const { Instructor, ph, Course } = courseDetails;
 
     const templateParams = {
@@ -78,16 +80,15 @@ const CourseDetailsPage = () => {
 
   return (
     <div>
-      <div  className='hidden md:block'>
+      <div className='hidden md:block'>
         <Header />
-        
       </div>
       <div className='px-4 md:px-24 lg:px-48 py-14'>
         <h1 className='text-3xl md:text-4xl'>{Course}</h1>
         <div className='flex flex-col md:flex-row justify-center items-center mt-10'>
           <img src={Image} alt={Course} className='w-full md:w-1/2 h-auto rounded-lg object-cover mb-4' />
           <div className='mt-4 md:mt-0 md:ml-10'>
-            <h1 className='text-xl md:text-2xl mb-2'>"{Description}"</h1>
+            <h1 className='text-xl md:text-2xl mb-2'>&quot;{Description}&quot;</h1>
             <h1 className='text-lg'>Instructor: {Instructor}</h1>
             <h1 className='text-lg'>Rating: {Rating}</h1>
             <h1 className='text-lg'>Price: ${price}</h1>

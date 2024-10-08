@@ -1,14 +1,13 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { useGSAP } from '@gsap/react';
 
 const Page2Header = () => {
   const headerRef = useRef(null);
   const imageRef = useRef(null);
   const textRef = useRef(null);
 
-  useGSAP(() => {
+  useEffect(() => {
     const tl = gsap.timeline();
 
     tl.from(imageRef.current, {
@@ -39,7 +38,7 @@ const Page2Header = () => {
           Worried about university exams and career?
         </h1>
         <h1 className='text-2xl md:text-4xl font-bold mt-5 mb-11 leading-snug text-slate-800'>
-          "We provide <span className='text-red-500'>best resources</span> and support to guide you with our experienced instructors"
+          &quot;We provide <span className='text-red-500'>best resources</span> and support to guide you with our experienced instructors&quot;
         </h1>
         <h1 className='mt-5 font-bold text-lg md:text-xl'>Ace your university exams</h1>
         <h1 className='text-base md:text-lg'>Get better understanding of concepts with 24*7 support</h1>
