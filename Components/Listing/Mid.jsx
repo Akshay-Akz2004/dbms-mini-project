@@ -36,19 +36,18 @@ const Mid = () => {
     setSelectedCourse(table);
   };
 
-
   const handleCardClick = (courseId) => {
     router.push(`/course-details?table=${selectedCourse}&id=${courseId}`);
   };
 
   return (
-    <div className='h-screen w-full p-20'>
-      <h1 className='text-center text-5xl font-sans mb-6'>Find a course that works for you</h1>
-      <div className='flex items-center justify-center gap-12'>
+    <div className='h-screen w-full p-4 md:p-20'>
+      <h1 className='text-center text-3xl md:text-5xl font-sans mb-6'>Find a course that works for you</h1>
+      <div className='flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12'>
         {courseNames.map((course, index) => (
           <button 
             key={index} 
-            className={`px-4 py-2  rounded-2xl border border-solid border-black ${selectedCourse === course.table ? 'bg-black text-white' : ''}`} 
+            className={`px-4 py-2 rounded-2xl border border-solid border-black ${selectedCourse === course.table ? 'bg-black text-white' : 'bg-white text-black'}`} 
             onClick={() => handleCourseClick(course.table)}
           >
             {course.name}
@@ -56,7 +55,7 @@ const Mid = () => {
         ))}
       </div>
       <div className='h-20'></div>
-      <div className='flex flex-wrap gap-4 ml-5 '>
+      <div className='flex flex-wrap gap-4 justify-center md:justify-normal'>
         {categories.length > 0 ? (
           categories.map((category) => (
             <CourseCard

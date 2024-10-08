@@ -78,17 +78,20 @@ const CourseDetailsPage = () => {
 
   return (
     <div>
-      <Header />
-      <div className='px-48 py-14'>
-        <h1 className='text-4xl'>{Course}</h1>
-        <div className='flex justify-center items-center'>
-          <img src={Image} alt={Course} className='w-1/2 left-0 h-1/2 mt-10 rounded-lg object-cover mb-4' />
-          <div className='mt-10 ml-28'>
-            <h1 className='text-4xl mb-2'>"{Description}"</h1>
-            <h1 className='mb-8'>Instructor: {Instructor}</h1>
-            <h1>Rating: {Rating}</h1>
-            <h1>Price: ${price}</h1>
-            <h1>For more details, contact: <span className='font-bold'>{ph}</span></h1>
+      <div  className='hidden md:block'>
+        <Header />
+        
+      </div>
+      <div className='px-4 md:px-24 lg:px-48 py-14'>
+        <h1 className='text-3xl md:text-4xl'>{Course}</h1>
+        <div className='flex flex-col md:flex-row justify-center items-center mt-10'>
+          <img src={Image} alt={Course} className='w-full md:w-1/2 h-auto rounded-lg object-cover mb-4' />
+          <div className='mt-4 md:mt-0 md:ml-10'>
+            <h1 className='text-xl md:text-2xl mb-2'>"{Description}"</h1>
+            <h1 className='text-lg'>Instructor: {Instructor}</h1>
+            <h1 className='text-lg'>Rating: {Rating}</h1>
+            <h1 className='text-lg'>Price: ${price}</h1>
+            <h1 className='text-lg'>For more details, contact: <span className='font-bold'>{ph}</span></h1>
             <button onClick={handleConnectNow} className="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Connect Now</button>
           </div>
         </div>
@@ -96,10 +99,10 @@ const CourseDetailsPage = () => {
 
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-5 h-80 w-80 rounded-lg shadow-lg">
-          <h2 className="text-xl font-bold text-center mt-4">Thanks for using <span className='text-red-600'>KTUScholarHub</span>!</h2>
-            <h2 className="text-xl   mt-5 font-sans">Enter Your <span className='text-red-600'>Email</span></h2>
-            <h3 className='text-gray-500 mb-8 text-xs '>We will contact you via mail</h3>
+          <div className="bg-white p-5 md:w-96 rounded-lg shadow-lg">
+            <h2 className="text-xl font-bold text-center mt-4">Thanks for using <span className='text-red-600'>KTUScholarHub</span>!</h2>
+            <h2 className="text-xl mt-5 font-sans">Enter Your <span className='text-red-600'>Email</span></h2>
+            <h3 className='text-gray-500 mb-8 text-xs'>We will contact you via mail</h3>
             <input
               type="email"
               value={email}

@@ -22,7 +22,7 @@ const Courses = () => {
   }, []);
 
   return (
-    <div className='px-28 mt-6'>
+    <div className='px-7 md:px-28 mt-6'>
       <h1 className='text-3xl font-bold text-gray-900 mb-2'>Explore Our Categories</h1>
       <p className='mb-6'>Discover your passion</p>
       <div className='flex flex-wrap justify-center gap-10'>

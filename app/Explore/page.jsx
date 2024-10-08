@@ -5,7 +5,9 @@ import Mid from '@/Components/Listing/Mid'
 const page = () => {
   return (
     <div className='h-screen  w-full overflow'>
+        <div className='hidden sm:block'>
         <Header/>
+        </div>
       <Page2Header/>
       <Mid/>
     </div>

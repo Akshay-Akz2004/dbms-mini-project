@@ -16,8 +16,8 @@ const Hero2 = () => {
         className='h-screen w-1/2 bg-cover bg-center '
         style={{
           backgroundImage: "url('https://pwskills.com/images/masterClass/masterclass_landing.svg')",
-          backgroundSize: "70%", // Reduce the size of the background image
-        backgroundRepeat: "no-repeat", // Ensure the image doesn't repeat
+          backgroundSize: "70%", 
+        backgroundRepeat: "no-repeat",
         }}
       >
       </div>

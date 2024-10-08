@@ -111,10 +111,10 @@ const Page = () => {
   };
 
   return (
-    <div className="h-screen w-full flex">
+    <div className="h-screen w-full flex flex-col md:flex-row">
       <div
         ref={bannerRef}
-        className="h-screen w-4/5 bg-yellow-300">
+        className="h-1/3 md:h-full w-full md:w-4/5 bg-yellow-300">
         <img
           src="https://accounts.pwskills.com/images/signin-banner.svg"
           className="w-full h-full object-cover object-center"
@@ -123,18 +123,18 @@ const Page = () => {
       </div>
       <div
         ref={formRef}
-        className="h-screen w-1/2 px-20 py-16 flex flex-col shadow-2xl">
+        className="h-2/3 md:h-full w-full md:w-1/2 px-10 py-16 flex flex-col shadow-2xl">
         <h1
           ref={headingRef}
-          className="text-2xl font-bold mb-20">
+          className="text-2xl font-bold mb-10 md:mb-20">
           KTUScholarHub
         </h1>
-        <h1 className="text-2xl font-bold">
+        <h1 className="text-xl md:text-2xl font-bold">
           {isLogin
             ? "Embark on Your Path to Success!"
             : "Create Your Account!"}
         </h1>
-        <h1 className="mt-5 ml-2">
+        <h1 className="mt-2 md:mt-5 ml-2">
           Please {isLogin ? "login" : "create an account"} to continue.
         </h1>
 
@@ -145,22 +145,22 @@ const Page = () => {
 
         <form
           onSubmit={isLogin ? handleLogin : handleCreateAccount}
-          className="mt-10">
-          <div className="mb-5">
+          className="mt-8 md:mt-10">
+          <div className="mb-4 md:mb-5">
             <input
               type="text"
               placeholder="Username"
-              className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full p-2 md:p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
-          <div className="mb-5">
+          <div className="mb-4 md:mb-5">
             <input
               type="password"
               placeholder="Password"
-              className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full p-2 md:p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-black"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -168,7 +168,7 @@ const Page = () => {
           </div>
           <button
             type="submit"
-            className="w-full py-3 bg-red-400 text-white font-bold rounded hover:bg-red-600 transition duration-200">
+            className="w-full py-2 md:py-3 bg-red-400 text-white font-bold rounded hover:bg-red-600 transition duration-200">
             {isLogin ? "Login" : "Create Account"}
           </button>
         </form>
